@@ -42,4 +42,4 @@ const Enquiries = () => {
     );
 };
 
-export default Enquiries
+export default Enquiries;

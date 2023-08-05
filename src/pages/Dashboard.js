@@ -161,7 +161,7 @@ const Dashboard = () => {
         <div>
           <Table columns={columns} dataSource={data1} />
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

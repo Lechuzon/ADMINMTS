@@ -20,4 +20,4 @@ const Addcat = () => {
     )
 }
 
-export default Addcat
+export default Addcat;

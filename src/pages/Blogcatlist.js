@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCategories } from "../features/bcategory/bcategorySlice";
 
-
 const columns = [
   {
     title: "Nº",
@@ -16,15 +15,13 @@ const columns = [
   {
     title: "Nombre",
     dataIndex: "name",
-    sorter: (a,b) =>a.name.length-b.name.length,
+    sorter: (a, b) => a.name.length - b.name.length,
   },
   {
     title: "Accion",
     dataIndex: "action",
   },
 ];
-
-
 
 const Blogcatlist = () => {
   const dispatch = useDispatch();
@@ -60,4 +57,4 @@ data1.push({
     );
 };
 
-export default Blogcatlist
+export default Blogcatlist;
