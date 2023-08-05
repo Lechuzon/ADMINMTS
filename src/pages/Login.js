@@ -23,7 +23,7 @@ const Login = () => {
     validationSchema: schema,
     onSubmit: (values) => {
       dispatch(login(values));
-      alert(JSON.stringify(values, null, 2));
+     // alert(JSON.stringify(values, null, 2));
     },
   });
   const authState = useSelector((state) => state);
@@ -32,8 +32,6 @@ const Login = () => {
   useEffect(() => {
     if (isSuccess) {
       navigate("admin");
-    } else {
-      alert("no");
     }
   }, [user, isError, isSuccess, isLoading]);
   return (

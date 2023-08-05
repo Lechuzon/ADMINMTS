@@ -24,10 +24,10 @@ const columns = [
 const data1 = [];
 for (let i = 0; i < 46; i++) {
   data1.push({
-    key: i,
-    name: `Steve Morales ${i}`,
-    product: 32,
-    staus: `Lima, Perú ${i}`,
+    key: i+1,
+    name: `rojo ${i}`,
+    product: `parlante`,
+    status: `disponible`,
   });
 }
 
