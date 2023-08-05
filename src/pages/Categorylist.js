@@ -10,16 +10,16 @@ import { getCategories } from "../features/pcategory/pcategorySlice";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
     sorter: (a,b) =>a.name.length-b.name.length,
   },
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -50,7 +50,7 @@ for (let i = 0; i < pCatStat.length; i++) {
 
     return (
         <div>
-            <h3 className="mb-4 title">Product Categories</h3>
+            <h3 className="mb-4 title">Categorias de Productos</h3>
             <div>
                 <Table columns={columns} dataSource={data1} />
             </div>

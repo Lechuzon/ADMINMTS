@@ -9,19 +9,19 @@ import { deleteABlog, getBlogs, resetState } from "../features/blogs/blogSlice";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Title",
+    title: "Titulo",
     dataIndex: "name",
   },
   {
-    title: "Category",
+    title: "Categoria",
     dataIndex: "category",
   },
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -55,7 +55,7 @@ const Bloglist = () => {
   
     return (
         <div>
-            <h3 className="mb-4 title">Blogs List</h3>
+            <h3 className="mb-4 title">Lista de Blogs</h3>
             <div>
                 <Table columns={columns} dataSource={data1} />
             </div>

@@ -53,42 +53,42 @@ const MainLayout = () => {
             {
               key: 'customers',
               icon: <AiOutlineUser />,
-              label: 'Customers',
+              label: 'Clientes',
             },
             {
               key: "Catalog",
               icon: <AiOutlineShoppingCart className="fs-4" />,
-              label: "Catalog",
+              label: "Catalogo",
               children: [
                 {
                   key: "product",
                   icon: <AiOutlineShoppingCart className="fs-4" />,
-                  label: "Add Product",
+                  label: "Añadir Producto",
                 },
                 {
                   key: "list-product",
                   icon: <AiOutlineShoppingCart className="fs-4" />,
-                  label: "Product List",
+                  label: "Lista de Productos",
                 },
                 {
                   key: "brand",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Brand",
+                  label: "Marca",
                 },
                 {
                   key: "list-brand",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Brand List ",
+                  label: "Lista de Marcas",
                 },
                 {
                   key: "category",
                   icon: <BiCategoryAlt className="fs-4" />,
-                  label: "Category",
+                  label: "Categoria",
                 },
                 {
                   key: "list-category",
                   icon: <BiCategoryAlt className="fs-4" />,
-                  label: "Category List",
+                  label: "Lista de Categorias",
                 },
                 {
                   key: "color",
@@ -98,14 +98,14 @@ const MainLayout = () => {
                 {
                   key: "list-color",
                   icon: <AiOutlineBgColors className="fs-4" />,
-                  label: "Color List",
+                  label: "Lista de Colores",
                 },
               ],
             },
             {
               key: "orders",
               icon: <FaClipboardList className="fs-4" />,
-              label: "Orders",
+              label: "Pedidos",
             },
             {
               key: "blogs",
@@ -115,29 +115,29 @@ const MainLayout = () => {
                 {
                   key: "blog",
                   icon: <ImBlog className="fs-4" />,
-                  label: "Add Blog",
+                  label: "Añadir Blog",
                 },
                 {
                   key: "blog-list",
                   icon: <FaBloggerB className="fs-4" />,
-                  label: "Blog List",
+                  label: "Lista de Blogs",
                 },
                 {
                   key: "blog-category",
                   icon: <ImBlog className="fs-4" />,
-                  label: "Add Blog Category",
+                  label: "Añadir Categoria de Blog",
                 },
                 {
                   key: "blog-category-list",
                   icon: <FaBloggerB className="fs-4" />,
-                  label: "Blog Category List",
+                  label: "Lista de Categoria de Blog",
                 },
               ],
             },
             {
               key: "enquiries",
               icon: <FaClipboardList className="fs-4" />,
-              label: "Enquiries",
+              label: "Consultas",
             },
           ]}
         />
@@ -190,7 +190,7 @@ const MainLayout = () => {
                     style={{ height: "auto", lineHeight: "20px" }}
                     to="/"
                   >
-                    View Profile
+                    Ver Perfil
                   </Link>
                 </li>
                 <li>
@@ -199,7 +199,7 @@ const MainLayout = () => {
                     style={{ height: "auto", lineHeight: "20px" }}
                     to="/"
                   >
-                    Signout
+                    Cerrar Sesión
                   </Link>
                 </li>
               </div>

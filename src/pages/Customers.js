@@ -6,11 +6,11 @@ import { getUsers } from "../features/customers/customerSlice";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
     defaultSortOrder: "descend",
     sorter: (a,b) =>a.name.length-b.name.length,
@@ -20,7 +20,7 @@ const columns = [
     dataIndex: "email",
   },
   {
-    title: "Mobile",
+    title: "Celular",
     dataIndex: "mobile",
   },
 ];
@@ -47,7 +47,7 @@ for (let i = 0; i < customerstate.length; i++) {
   
     return (
         <div>
-            <h3 className="mb-4 title">Customers</h3>
+            <h3 className="mb-4 title">Clientes</h3>
             <div>
                 <Table columns={columns} dataSource={data1} />
             </div>

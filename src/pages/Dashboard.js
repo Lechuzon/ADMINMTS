@@ -4,19 +4,19 @@ import { Column } from "@ant-design/plots";
 import { Table } from "antd";
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
   },
   {
-    title: "Product",
+    title: "Producto",
     dataIndex: "product",
   },
   {
-    title: "Status",
+    title: "Estado",
     dataIndex: "status",
   },
 ];
@@ -122,7 +122,7 @@ const Dashboard = () => {
             <h6>
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0  desc">Compared To April 2022</p>
+            <p className="mb-0  desc">Comparado a Abril del 2022</p>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-end flex-grow-1 bg-white p-3 roudned-3">
@@ -134,7 +134,7 @@ const Dashboard = () => {
             <h6 className="red">
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0 desc">Compared To April 2022</p>
+            <p className="mb-0 desc">Comparado a Abril del 2022</p>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-end flex-grow-1 bg-white p-3 roudned-3">
@@ -146,18 +146,18 @@ const Dashboard = () => {
             <h6 className="green">
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0 desc">Compared To April 2022</p>
+            <p className="mb-0 desc">Comparado a Abril del 2022</p>
           </div>
         </div>
       </div>
       <div className="mt-4">
-        <h3 className="mb-5 title">Income Statics</h3>
+        <h3 className="mb-5 title">Estadisticas de Ingresos</h3>
         <div>
           <Column {...config} />
         </div>
       </div>
       <div className="mt-4">
-        <h3 className="mb-5 title">Recent Orders</h3>
+        <h3 className="mb-5 title">Pedidos recientes</h3>
         <div>
           <Table columns={columns} dataSource={data1} />
         </div>
