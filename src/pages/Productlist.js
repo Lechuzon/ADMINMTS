@@ -75,7 +75,7 @@ for (let i = 0; i < productState.length; i++) {
 console.log(data1);
     return (
         <div>
-            <h3 className="mb-4 title">Products</h3>
+            <h3 className="mb-4 title">Productos</h3>
             <div>
                 <Table columns={columns} dataSource={data1} />
             </div>

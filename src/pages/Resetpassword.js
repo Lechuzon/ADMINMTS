@@ -10,8 +10,8 @@ const Resetpassword = () => {
       <br />
       <br />
       <div className="my-5 w-25 bg-white rounded-3 mx-auto p-4">
-        <h3 className="text-center title"> Reset Password</h3>
-        <p className="text-center">Please Enter your new password.</p>
+        <h3 className="text-center title">Restablecer la contraseña</h3>
+        <p className="text-center">Ingrese su nueva contraseña.</p>
         <form action="">
           <CustomInput type="password" label="New Password" id="pass" />
           <CustomInput
@@ -25,7 +25,7 @@ const Resetpassword = () => {
             style={{ background: "#ffd333" }}
             type="submit"
           >
-            Reset Password
+            Restablecer la contraseña
           </button>
         </form>
       </div>
