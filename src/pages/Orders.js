@@ -1,6 +1,10 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Table } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { BiEdit } from "react-icons/bi";
+import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { getOrders } from "../features/auth/authSlice";
 
 const columns = [
   {
@@ -16,23 +20,59 @@ const columns = [
     dataIndex: "product",
   },
   {
-    title: "Estado",
-    dataIndex: "status",
+    title: "Cantidad",
+    dataIndex: "amount",
+  },
+  {
+    title: "Fecha",
+    dataIndex: "date",
+  },
+  {
+    title: "Acción",
+    dataIndex: "action",
   },
 ];
 
-const data1 = [];
-for (let i = 0; i < 46; i++) {
-  data1.push({
-    key: i+1,
-    name: `pedido ${i}`,
-    product: `laptop`,
-    status: `disponible`,
-  });
-}
 
 const Orders = () => {
-    return (
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getOrders());
+  },[]);
+  const orderState = useSelector((state)=>state.auth.orders);
+
+  const data1 = [];
+  for (let i=0; i<orderState.length;i++){
+    data1.push({
+      key : i + 1,
+      name : orderState[i].orderby.firstname,
+      product : orderState[i].products.map((i,j)=>{
+        return (
+          
+            <ul key={j}>
+              <li>
+                 {i.product.title}
+              </li>
+            </ul> 
+        );
+      }),
+      amount : orderState[i].paymentIntent.amount,
+      date : new Date(orderState[i].createdAt).toLocaleString(),
+      action: (
+        <>
+          <Link to="/" className="fs-3 text-danger">
+            <BiEdit />
+          </Link>
+          <Link className="ms-3 fs-3 text-danger" to="/">
+            <AiFillDelete /> 
+          </Link>
+        </>
+      ),
+    });
+  
+}
+
+ return (
         <div>
             <h3 className="mb-4 title">Pedidos</h3>
             <div>
