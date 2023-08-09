@@ -1,20 +1,21 @@
 import React, { useEffect } from "react";
 import CustomInput from "../components/CustomInput";
 import { Link, useNavigate } from "react-router-dom";
+import * as yup from "yup";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../features/auth/authSlice";
+
+let schema = yup.object().shape({
+  email: yup.string()
+    .email("El email debe ser valido")
+    .required("El email es requerido"),
+  password: yup.string().required("La contraseña es requerida"),
+});
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  let schema = Yup.object().shape({
-    email: Yup.string()
-      .email("El email debe ser valido")
-      .required("El email es requerido"),
-    password: Yup.string().required("La contraseña es requerida"),
-  });
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -23,15 +24,18 @@ const Login = () => {
     validationSchema: schema,
     onSubmit: (values) => {
       dispatch(login(values));
-     // alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2));
     },
   });
+
   const authState = useSelector((state) => state);
   const { user, isError, isSuccess, isLoading, message } = authState.auth;
 
   useEffect(() => {
     if (isSuccess) {
       navigate("admin");
+    }else {
+      navigate("");
     }
   }, [user, isError, isSuccess, isLoading]);
   return (
@@ -48,32 +52,31 @@ const Login = () => {
           {message.message == "Rechazado" ? "No eres un administrador" : ""}
         </div>
         <form action="" onSubmit={formik.handleSubmit}>
-          <CustomInput
+        <CustomInput
             type="text"
-            name="email"
-            label="Email"
+            label="Email Address"
             id="email"
+            name="email"
+            onChng={formik.handleChange("email")}
+            onBlr={formik.handleBlur("email")}
             val={formik.values.email}
-            onCh={formik.handleChange("email")}
           />
-          <div className="error">
-            {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
-            ) : null}
+          <div className="error mt-2">
+            {formik.touched.email && formik.errors.email}
           </div>
           <CustomInput
             type="password"
-            name="password"
             label="Password"
             id="pass"
+            name="password"
+            onChng={formik.handleChange("password")}
+            onBlr={formik.handleBlur("password")}
             val={formik.values.password}
-            onCh={formik.handleChange("password")}
           />
-          <div className="error">
-            {formik.touched.password && formik.errors.password ? (
-              <div>{formik.errors.password}</div>
-            ) : null}
+          <div className="error mt-2">
+            {formik.touched.password && formik.errors.password}
           </div>
+
           <div className="mb-3 text-end">
             <Link to="forgot-password" className="">
               ¿Has olvidado tu contraseña?

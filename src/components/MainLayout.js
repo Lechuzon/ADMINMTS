@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from '@ant-design/icons';
+import React, { useState } from "react";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import {
   AiOutlineDashboard,
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineBgColors,
 } from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import { RiCouponLine } from "react-icons/ri";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { ImBlog } from "react-icons/im";
 import { IoIosNotifications } from "react-icons/io";
 import { FaClipboardList, FaBloggerB } from "react-icons/fa";
 import { SiBrandfolder } from "react-icons/si";
 import { BiCategoryAlt } from "react-icons/bi";
-import { Layout, Menu, Button, theme } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Layout, Menu, theme } from "antd";
+import { useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -26,18 +26,18 @@ const MainLayout = () => {
   } = theme.useToken();
   const navigate = useNavigate();
   return (
-    <Layout>
+    <Layout /* onContextMenu={(e) => e.preventDefault()} */>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
           <h2 className="text-white fs-5 text-center py-3 mb-0">
-            <span className="sm-logo">MTS </span>
-            <span className="lg-logo">MALL TECH STORE</span>
+            <span className="sm-logo">DC</span>
+            <span className="lg-logo">Dev Corner</span>
           </h2>
         </div>
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['']}
+          defaultSelectedKeys={[""]}
           onClick={({ key }) => {
             if (key == "signout") {
             } else {
@@ -46,49 +46,49 @@ const MainLayout = () => {
           }}
           items={[
             {
-              key: '',
-              icon: <AiOutlineDashboard />,
-              label: 'Dashboard',
+              key: "",
+              icon: <AiOutlineDashboard className="fs-4" />,
+              label: "Dashboard",
             },
             {
-              key: 'customers',
-              icon: <AiOutlineUser />,
-              label: 'Clientes',
+              key: "customers",
+              icon: <AiOutlineUser className="fs-4" />,
+              label: "Customers",
             },
             {
               key: "Catalog",
               icon: <AiOutlineShoppingCart className="fs-4" />,
-              label: "Catalogo",
+              label: "Catalog",
               children: [
                 {
                   key: "product",
                   icon: <AiOutlineShoppingCart className="fs-4" />,
-                  label: "Añadir Producto",
+                  label: "Add Product",
                 },
                 {
                   key: "list-product",
                   icon: <AiOutlineShoppingCart className="fs-4" />,
-                  label: "Lista de Productos",
+                  label: "Product List",
                 },
                 {
                   key: "brand",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Marca",
+                  label: "Brand",
                 },
                 {
                   key: "list-brand",
                   icon: <SiBrandfolder className="fs-4" />,
-                  label: "Lista de Marcas",
+                  label: "Brand List ",
                 },
                 {
                   key: "category",
                   icon: <BiCategoryAlt className="fs-4" />,
-                  label: "Categoria",
+                  label: "Category",
                 },
                 {
                   key: "list-category",
                   icon: <BiCategoryAlt className="fs-4" />,
-                  label: "Lista de Categorias",
+                  label: "Category List",
                 },
                 {
                   key: "color",
@@ -98,14 +98,31 @@ const MainLayout = () => {
                 {
                   key: "list-color",
                   icon: <AiOutlineBgColors className="fs-4" />,
-                  label: "Lista de Colores",
+                  label: "Color List",
                 },
               ],
             },
             {
               key: "orders",
               icon: <FaClipboardList className="fs-4" />,
-              label: "Pedidos",
+              label: "Orders",
+            },
+            {
+              key: "marketing",
+              icon: <RiCouponLine className="fs-4" />,
+              label: "Marketing",
+              children: [
+                {
+                  key: "coupon",
+                  icon: <ImBlog className="fs-4" />,
+                  label: "Add Coupon",
+                },
+                {
+                  key: "coupon-list",
+                  icon: <RiCouponLine className="fs-4" />,
+                  label: "Coupon List",
+                },
+              ],
             },
             {
               key: "blogs",
@@ -115,29 +132,29 @@ const MainLayout = () => {
                 {
                   key: "blog",
                   icon: <ImBlog className="fs-4" />,
-                  label: "Añadir Blog",
+                  label: "Add Blog",
                 },
                 {
                   key: "blog-list",
                   icon: <FaBloggerB className="fs-4" />,
-                  label: "Lista de Blogs",
+                  label: "Blog List",
                 },
                 {
                   key: "blog-category",
                   icon: <ImBlog className="fs-4" />,
-                  label: "Añadir Categoria de Blog",
+                  label: "Add Blog Category",
                 },
                 {
                   key: "blog-category-list",
                   icon: <FaBloggerB className="fs-4" />,
-                  label: "Lista de Categoria de Blog",
+                  label: "Blog Category List",
                 },
               ],
             },
             {
               key: "enquiries",
               icon: <FaClipboardList className="fs-4" />,
-              label: "Consultas",
+              label: "Enquiries",
             },
           ]}
         />
@@ -180,8 +197,8 @@ const MainLayout = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <h5 className="mb-0">Mall Tech Store</h5>
-                <p className="mb-0">mts2023@gmail.com</p>
+                <h5 className="mb-0">Navdeep</h5>
+                <p className="mb-0">navdeepdahiya753@gmail.com</p>
               </div>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li>
@@ -190,7 +207,7 @@ const MainLayout = () => {
                     style={{ height: "auto", lineHeight: "20px" }}
                     to="/"
                   >
-                    Ver Perfil
+                    View Profile
                   </Link>
                 </li>
                 <li>
@@ -199,7 +216,7 @@ const MainLayout = () => {
                     style={{ height: "auto", lineHeight: "20px" }}
                     to="/"
                   >
-                    Cerrar Sesión
+                    Signout
                   </Link>
                 </li>
               </div>
@@ -208,13 +225,24 @@ const MainLayout = () => {
         </Header>
         <Content
           style={{
-            margin: '24px 16px',
+            margin: "24px 16px",
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
           }}
         >
-          < Outlet />
+          <ToastContainer
+            position="top-right"
+            autoClose={250}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            theme="light"
+          />
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
