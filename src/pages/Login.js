@@ -54,7 +54,7 @@ const Login = () => {
         <form action="" onSubmit={formik.handleSubmit}>
         <CustomInput
             type="text"
-            label="Email Address"
+            label="Dirección de correo electrónico"
             id="email"
             name="email"
             onChng={formik.handleChange("email")}
@@ -66,7 +66,7 @@ const Login = () => {
           </div>
           <CustomInput
             type="password"
-            label="Password"
+            label="Contraseña"
             id="pass"
             name="password"
             onChng={formik.handleChange("password")}
@@ -87,7 +87,7 @@ const Login = () => {
             style={{ background: "#ffd333" }}
             type="submit"
           >
-            Login
+            Ingresar
           </button>
         </form>
       </div>

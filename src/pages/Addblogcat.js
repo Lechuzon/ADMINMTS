@@ -12,7 +12,7 @@ import {
   updateABlogCat,
 } from "../features/bcategory/bcategorySlice";
 let schema = yup.object().shape({
-  title: yup.string().required("Category Name is Required"),
+  title: yup.string().required("El nombre de la categoria es requerida"),
 });
 const Addblogcat = () => {
   const dispatch = useDispatch();
@@ -37,14 +37,14 @@ const Addblogcat = () => {
   }, [getBlogCatId]);
   useEffect(() => {
     if (isSuccess && createBlogCategory) {
-      toast.success("Blog Category Added Successfullly!");
+      toast.success("¡Categoría de blog añadida con éxito!");
     }
     if (isSuccess && updatedBlogCategory) {
-      toast.success("Blog Category Updated Successfullly!");
+      toast.success("¡Categoría del blog actualizada con éxito!");
       navigate("/admin/blog-category-list");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading]);
   const formik = useFormik({
@@ -70,7 +70,7 @@ const Addblogcat = () => {
   return (
     <div>
       <h3 className="mb-4  title">
-        {getBlogCatId !== undefined ? "Edit" : "Add"} Blog Category
+        {getBlogCatId !== undefined ? "Edit" : "Add"} Categoría del blog
       </h3>
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
@@ -80,7 +80,7 @@ const Addblogcat = () => {
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
             val={formik.values.title}
-            label="Enter Blog Category"
+            label="Ingrese la categoría del blog"
             id="blogcat"
           />
           <div className="error">
@@ -90,7 +90,7 @@ const Addblogcat = () => {
             className="btn btn-success border-0 rounded-3 my-5"
             type="submit"
           >
-            {getBlogCatId !== undefined ? "Edit" : "Add"} Blog Category
+            {getBlogCatId !== undefined ? "Edit" : "Add"} Categoría del blog
           </button>
         </form>
       </div>

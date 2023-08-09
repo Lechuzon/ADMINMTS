@@ -13,9 +13,9 @@ import {
 } from "../features/coupon/couponSlice";
 
 let schema = yup.object().shape({
-  name: yup.string().required("Coupon Name is Required"),
-  expiry: yup.date().required("Expiry Date is Required"),
-  discount: yup.number().required("Discount Percentage is Required"),
+  name: yup.string().required("El nombre del cupón es obligatorio"),
+  expiry: yup.date().required("La fecha de caducidad es obligatoria"),
+  discount: yup.number().required("Se requiere porcentaje de descuento"),
 });
 const AddCoupon = () => {
   const dispatch = useDispatch();
@@ -50,14 +50,14 @@ const AddCoupon = () => {
 
   useEffect(() => {
     if (isSuccess && createdCoupon) {
-      toast.success("Coupon Added Successfullly!");
+      toast.success("Cupón agregado con éxito!");
     }
     if (isSuccess && updatedCoupon) {
-      toast.success("Coupon Updated Successfullly!");
+      toast.success("¡Cupón actualizado con éxito!");
       navigate("/admin/coupon-list");
     }
     if (isError && couponName && couponDiscount && couponExpiry) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading]);
   const formik = useFormik({
@@ -86,7 +86,7 @@ const AddCoupon = () => {
   return (
     <div>
       <h3 className="mb-4 title">
-        {getCouponId !== undefined ? "Edit" : "Add"} Coupon
+        {getCouponId !== undefined ? "Edit" : "Add"} Cupón
       </h3>
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
@@ -96,7 +96,7 @@ const AddCoupon = () => {
             onChng={formik.handleChange("name")}
             onBlr={formik.handleBlur("name")}
             val={formik.values.name}
-            label="Enter Coupon Name"
+            label="Ingrese el nombre del cupón"
             id="name"
           />
           <div className="error">
@@ -108,7 +108,7 @@ const AddCoupon = () => {
             onChng={formik.handleChange("expiry")}
             onBlr={formik.handleBlur("expiry")}
             val={formik.values.expiry}
-            label="Enter Expiry Data"
+            label="Ingrese datos de caducidad"
             id="date"
           />
           <div className="error">
@@ -120,7 +120,7 @@ const AddCoupon = () => {
             onChng={formik.handleChange("discount")}
             onBlr={formik.handleBlur("discount")}
             val={formik.values.discount}
-            label="Enter Discount"
+            label="Introducir descuento"
             id="discount"
           />
           <div className="error">
@@ -130,7 +130,7 @@ const AddCoupon = () => {
             className="btn btn-success border-0 rounded-3 my-5"
             type="submit"
           >
-            {getCouponId !== undefined ? "Edit" : "Add"} Coupon
+            {getCouponId !== undefined ? "Edit" : "Add"} Cupón
           </button>
         </form>
       </div>

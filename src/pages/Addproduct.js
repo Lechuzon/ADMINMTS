@@ -15,17 +15,17 @@ import Dropzone from "react-dropzone";
 import { delImg, uploadImg } from "../features/upload/uploadSlice";
 import { createProducts, resetState } from "../features/product/productSlice";
 let schema = yup.object().shape({
-  title: yup.string().required("Title is Required"),
-  description: yup.string().required("Description is Required"),
-  price: yup.number().required("Price is Required"),
-  brand: yup.string().required("Brand is Required"),
-  category: yup.string().required("Category is Required"),
-  tags: yup.string().required("Tag is Required"),
+  title: yup.string().required("Se requiere título"),
+  description: yup.string().required("Se requiere una descripcion"),
+  price: yup.number().required("Se requiere el precio"),
+  brand: yup.string().required("Se requiere la marca"),
+  category: yup.string().required("Se requiere la categoria"),
+  tags: yup.string().required("Se requiere etiqueta"),
   color: yup
     .array()
-    .min(1, "Pick at least one color")
-    .required("Color is Required"),
-  quantity: yup.number().required("Quantity is Required"),
+    .min(1, "Elige al menos un color")
+    .required("El color es obligatorio"),
+  quantity: yup.number().required("Se requiere cantidad"),
 });
 
 const Addproduct = () => {
@@ -48,10 +48,10 @@ const Addproduct = () => {
   const { isSuccess, isError, isLoading, createdProduct } = newProduct;
   useEffect(() => {
     if (isSuccess && createdProduct) {
-      toast.success("Product Added Successfullly!");
+      toast.success("¡Producto agregado con éxito!");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading]);
   const coloropt = [];
@@ -101,7 +101,7 @@ const Addproduct = () => {
   };
   return (
     <div>
-      <h3 className="mb-4 title">Add Product</h3>
+      <h3 className="mb-4 title">Agregar producto</h3>
       <div>
         <form
           onSubmit={formik.handleSubmit}
@@ -109,7 +109,7 @@ const Addproduct = () => {
         >
           <CustomInput
             type="text"
-            label="Enter Product Title"
+            label="Ingrese el título del producto"
             name="title"
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
@@ -131,7 +131,7 @@ const Addproduct = () => {
           </div>
           <CustomInput
             type="number"
-            label="Enter Product Price"
+            label="Ingrese el precio del producto"
             name="price"
             onChng={formik.handleChange("price")}
             onBlr={formik.handleBlur("price")}
@@ -148,7 +148,7 @@ const Addproduct = () => {
             className="form-control py-3 mb-3"
             id=""
           >
-            <option value="">Select Brand</option>
+            <option value="">Seleccionar marca</option>
             {brandState.map((i, j) => {
               return (
                 <option key={j} value={i.title}>
@@ -168,7 +168,7 @@ const Addproduct = () => {
             className="form-control py-3 mb-3"
             id=""
           >
-            <option value="">Select Category</option>
+            <option value="">Seleccionar categoria</option>
             {catState.map((i, j) => {
               return (
                 <option key={j} value={i.title}>
@@ -189,11 +189,11 @@ const Addproduct = () => {
             id=""
           >
             <option value="" disabled>
-              Select Category
+              Seleccionar categoria
             </option>
-            <option value="featured">Featured</option>
+            <option value="featured">Destacados</option>
             <option value="popular">Popular</option>
-            <option value="special">Special</option>
+            <option value="special">Especial</option>
           </select>
           <div className="error">
             {formik.touched.tags && formik.errors.tags}
@@ -203,7 +203,7 @@ const Addproduct = () => {
             mode="multiple"
             allowClear
             className="w-100"
-            placeholder="Select colors"
+            placeholder="Selecionar color"
             defaultValue={color}
             onChange={(i) => handleColors(i)}
             options={coloropt}
@@ -213,7 +213,7 @@ const Addproduct = () => {
           </div>
           <CustomInput
             type="number"
-            label="Enter Product Quantity"
+            label="Ingrese la cantidad del producto"
             name="quantity"
             onChng={formik.handleChange("quantity")}
             onBlr={formik.handleBlur("quantity")}
@@ -231,7 +231,8 @@ const Addproduct = () => {
                   <div {...getRootProps()}>
                     <input {...getInputProps()} />
                     <p>
-                      Drag 'n' drop some files here, or click to select files
+                      Arrastre y suelte algunos archivos aquí, o haga clic para
+                      seleccionar archivos
                     </p>
                   </div>
                 </section>
@@ -257,7 +258,7 @@ const Addproduct = () => {
             className="btn btn-success border-0 rounded-3 my-5"
             type="submit"
           >
-            Add Product
+            Agregar producto
           </button>
         </form>
       </div>

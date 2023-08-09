@@ -9,15 +9,15 @@ import CustomModal from "../components/CustomModal";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
   },
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -81,7 +81,7 @@ const Colorlist = () => {
         performAction={() => {
           deleteColor(colorId);
         }}
-        title="Are you sure you want to delete this color?"
+        title="¿Está seguro de que desea eliminar este color?"
       />
     </div>
   );

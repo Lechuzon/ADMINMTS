@@ -13,17 +13,17 @@ import CustomModal from "../components/CustomModal";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
     sorter: (a, b) => a.name.length - b.name.length,
   },
 
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -77,7 +77,7 @@ const Categorylist = () => {
   };
   return (
     <div>
-      <h3 className="mb-4 title">Product Categories</h3>
+      <h3 className="mb-4 title">Categorías de Producto</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -87,7 +87,7 @@ const Categorylist = () => {
         performAction={() => {
           deleteCategory(pCatId);
         }}
-        title="Are you sure you want to delete this Product Category?"
+        title="¿Está seguro de que desea eliminar esta categoría de producto?"
       />
     </div>
   );

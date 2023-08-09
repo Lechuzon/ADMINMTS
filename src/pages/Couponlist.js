@@ -9,27 +9,27 @@ import CustomModal from "../components/CustomModal";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
 
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
     sorter: (a, b) => a.name.length - b.name.length,
   },
   {
-    title: "Discount",
+    title: "Descuento",
     dataIndex: "discount",
     sorter: (a, b) => a.discount - b.discount,
   },
   {
-    title: "Expiry",
+    title: "Expiración",
     dataIndex: "expiry",
     sorter: (a, b) => a.name.length - b.name.length,
   },
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -85,7 +85,7 @@ const Couponlist = () => {
   };
   return (
     <div>
-      <h3 className="mb-4 title">Coupons</h3>
+      <h3 className="mb-4 title">Cupones</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -95,7 +95,7 @@ const Couponlist = () => {
         performAction={() => {
           deleteCoupon(couponId);
         }}
-        title="Are you sure you want to delete this Coupon?"
+        title="¿Estás seguro de que quieres eliminar este cupón?"
       />
     </div>
   );

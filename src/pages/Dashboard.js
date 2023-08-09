@@ -4,19 +4,19 @@ import { Column } from "@ant-design/plots";
 import { Table } from "antd";
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
   },
   {
-    title: "Product",
+    title: "Producto",
     dataIndex: "product",
   },
   {
-    title: "Status",
+    title: "Estado",
     dataIndex: "staus",
   },
 ];
@@ -24,59 +24,59 @@ const data1 = [];
 for (let i = 0; i < 46; i++) {
   data1.push({
     key: i,
-    name: `Edward King ${i}`,
+    name: `Steven Morales ${i}`,
     product: 32,
-    staus: `London, Park Lane no. ${i}`,
+    staus: `Lima Perú ${i}`,
   });
 }
 const Dashboard = () => {
   const data = [
     {
-      type: "Jan",
+      type: "Enero",
       sales: 38,
     },
     {
-      type: "Feb",
+      type: "Febrero",
       sales: 52,
     },
     {
-      type: "Mar",
+      type: "Marzo",
       sales: 61,
     },
     {
-      type: "Apr",
+      type: "Abril",
       sales: 145,
     },
     {
-      type: "May",
+      type: "Mayo",
       sales: 48,
     },
     {
-      type: "Jun",
+      type: "Junio",
       sales: 38,
     },
     {
-      type: "July",
+      type: "Julio",
       sales: 38,
     },
     {
-      type: "Aug",
+      type: "Agosto",
       sales: 38,
     },
     {
-      type: "Sept",
+      type: "Septiembre",
       sales: 38,
     },
     {
-      type: "Oct",
+      type: "Octubre",
       sales: 38,
     },
     {
-      type: "Nov",
+      type: "Noviembre",
       sales: 38,
     },
     {
-      type: "Dec",
+      type: "Diciembre",
       sales: 38,
     },
   ];
@@ -102,10 +102,10 @@ const Dashboard = () => {
     },
     meta: {
       type: {
-        alias: "Month",
+        alias: "Mes",
       },
       sales: {
-        alias: "Income",
+        alias: "ingresos",
       },
     },
   };
@@ -122,7 +122,7 @@ const Dashboard = () => {
             <h6>
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0  desc">Compared To April 2022</p>
+            <p className="mb-0  desc">Comparado con abril de 2023</p>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-end flex-grow-1 bg-white p-3 roudned-3">
@@ -134,7 +134,7 @@ const Dashboard = () => {
             <h6 className="red">
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0  desc">Compared To April 2022</p>
+            <p className="mb-0  desc">Comparado con abril de 2023</p>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-end flex-grow-1 bg-white p-3 roudned-3">
@@ -146,18 +146,18 @@ const Dashboard = () => {
             <h6 className="green">
               <BsArrowDownRight /> 32%
             </h6>
-            <p className="mb-0 desc">Compared To April 2022</p>
+            <p className="mb-0 desc">Comparado con abril de 2023</p>
           </div>
         </div>
       </div>
       <div className="mt-4">
-        <h3 className="mb-5 title">Income Statics</h3>
+        <h3 className="mb-5 title">tabla de Ingresoss</h3>
         <div>
           <Column {...config} />
         </div>
       </div>
       <div className="mt-4">
-        <h3 className="mb-5 title">Recent Orders</h3>
+        <h3 className="mb-5 title">Ordenes recientes</h3>
         <div>
           <Table columns={columns} dataSource={data1} />
         </div>

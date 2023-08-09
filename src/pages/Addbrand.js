@@ -13,7 +13,7 @@ import {
 } from "../features/brand/brandSlice";
 
 let schema = yup.object().shape({
-  title: yup.string().required("Brand Name is Required"),
+  title: yup.string().required("El nombre de la marca es obligatorio"),
 });
 const Addbrand = () => {
   const dispatch = useDispatch();
@@ -39,15 +39,15 @@ const Addbrand = () => {
 
   useEffect(() => {
     if (isSuccess && createdBrand) {
-      toast.success("Brand Added Successfullly!");
+      toast.success("¡Marca agregada con éxito!");
     }
     if (isSuccess && updatedBrand) {
-      toast.success("Brand Updated Successfullly!");
+      toast.success("¡Marca actualizada con éxito!");
       navigate("/admin/list-brand");
     }
 
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading]);
   const formik = useFormik({
@@ -84,7 +84,7 @@ const Addbrand = () => {
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
             val={formik.values.title}
-            label="Enter Brand"
+            label="Introduzca la marca"
             id="brand"
           />
           <div className="error">
@@ -94,7 +94,7 @@ const Addbrand = () => {
             className="btn btn-success border-0 rounded-3 my-5"
             type="submit"
           >
-            {getBrandId !== undefined ? "Edit" : "Add"} Brand
+            {getBrandId !== undefined ? "Edit" : "Add"} Marca
           </button>
         </form>
       </div>

@@ -37,14 +37,14 @@ const Addcolor = () => {
   }, [getColorId]);
   useEffect(() => {
     if (isSuccess && createdColor) {
-      toast.success("Color Added Successfullly!");
+      toast.success("¡Color añadido con éxito!");
     }
     if (isSuccess && updatedColor) {
-      toast.success("Color Updated Successfullly!");
+      toast.success("¡Color actualizado con éxito!");
       navigate("/admin/list-color");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading, createdColor]);
   const formik = useFormik({
@@ -76,7 +76,7 @@ const Addcolor = () => {
         <form action="" onSubmit={formik.handleSubmit}>
           <CustomInput
             type="color"
-            label="Enter Product Color"
+            label="Ingrese el color del producto"
             onChng={formik.handleChange("title")}
             onBlr={formik.handleBlur("title")}
             val={formik.values.title}

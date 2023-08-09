@@ -7,21 +7,21 @@ import { getProducts } from "../features/product/productSlice";
 import { Link } from "react-router-dom";
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Title",
+    title: "Titulo",
     dataIndex: "title",
     sorter: (a, b) => a.title.length - b.title.length,
   },
   {
-    title: "Brand",
+    title: "Marca",
     dataIndex: "brand",
     sorter: (a, b) => a.brand.length - b.brand.length,
   },
   {
-    title: "Category",
+    title: "Categoria",
     dataIndex: "category",
     sorter: (a, b) => a.category.length - b.category.length,
   },
@@ -30,12 +30,12 @@ const columns = [
     dataIndex: "color",
   },
   {
-    title: "Price",
+    title: "Precio",
     dataIndex: "price",
     sorter: (a, b) => a.price - b.price,
   },
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -70,7 +70,7 @@ const Productlist = () => {
   console.log(data1);
   return (
     <div>
-      <h3 className="mb-4 title">Products</h3>
+      <h3 className="mb-4 title">Productos</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>

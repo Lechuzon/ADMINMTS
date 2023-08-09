@@ -18,9 +18,9 @@ import {
 import { getCategories } from "../features/bcategory/bcategorySlice";
 
 let schema = yup.object().shape({
-  title: yup.string().required("Title is Required"),
-  description: yup.string().required("Description is Required"),
-  category: yup.string().required("Category is Required"),
+  title: yup.string().required("Se requiere un título"),
+  description: yup.string().required("La descripción es obligatoria"),
+  category: yup.string().required("La categoría es requerida"),
 });
 const Addblog = () => {
   const dispatch = useDispatch();
@@ -57,14 +57,14 @@ const Addblog = () => {
 
   useEffect(() => {
     if (isSuccess && createdBlog) {
-      toast.success("Blog Added Successfullly!");
+      toast.success("¡Blog añadido con éxito!");
     }
     if (isSuccess && updatedBlog) {
-      toast.success("Blog Updated Successfullly!");
+      toast.success("¡Blog actualizado con éxito!");
       navigate("/admin/blog-list");
     }
     if (isError) {
-      toast.error("Something Went Wrong!");
+      toast.error("¡Algo salió mal!");
     }
   }, [isSuccess, isError, isLoading]);
 
@@ -115,7 +115,7 @@ const Addblog = () => {
           <div className="mt-4">
             <CustomInput
               type="text"
-              label="Enter Blog Title"
+              label="Ingrese el título del blog"
               name="title"
               onChng={formik.handleChange("title")}
               onBlr={formik.handleBlur("title")}
@@ -133,7 +133,7 @@ const Addblog = () => {
             className="form-control py-3  mt-3"
             id=""
           >
-            <option value="">Select Blog Category</option>
+            <option value="">Seleccionar categoría de blog</option>
             {bCatState.map((i, j) => {
               return (
                 <option key={j} value={i.title}>
@@ -164,7 +164,8 @@ const Addblog = () => {
                   <div {...getRootProps()}>
                     <input {...getInputProps()} />
                     <p>
-                      Drag 'n' drop some files here, or click to select files
+                      Arrastre y suelte algunos archivos aquí, o haga clic para
+                      seleccionar archivos
                     </p>
                   </div>
                 </section>

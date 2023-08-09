@@ -14,11 +14,11 @@ import CustomModal from "../components/CustomModal";
 
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Name",
+    title: "Nombre",
     dataIndex: "name",
   },
   {
@@ -26,16 +26,16 @@ const columns = [
     dataIndex: "email",
   },
   {
-    title: "Mobile",
+    title: "Celular",
     dataIndex: "mobile",
   },
   {
-    title: "Staus",
+    title: "Estado",
     dataIndex: "status",
   },
 
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -73,10 +73,10 @@ const Enquiries = () => {
             id=""
             onChange={(e) => setEnquiryStatus(e.target.value, enqState[i]._id)}
           >
-            <option value="Submitted">Submitted</option>
-            <option value="Contacted">Contacted</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Resolved">Resolved</option>
+            <option value="Submitted">Enviado</option>
+            <option value="Contacted">Contactado</option>
+            <option value="In Progress">En curso</option>
+            <option value="Resolved">Resuelto</option>
           </select>
         </>
       ),
@@ -113,7 +113,7 @@ const Enquiries = () => {
   };
   return (
     <div>
-      <h3 className="mb-4 title">Enquiries</h3>
+      <h3 className="mb-4 title">Consultas</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
@@ -123,7 +123,7 @@ const Enquiries = () => {
         performAction={() => {
           deleteEnq(enqId);
         }}
-        title="Are you sure you want to delete this enquiry?"
+        title="¿Está seguro de que desea eliminar esta consulta?"
       />
     </div>
   );

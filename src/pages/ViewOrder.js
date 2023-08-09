@@ -7,19 +7,19 @@ import { Link, useLocation } from "react-router-dom";
 import { getOrderByUser, getOrders } from "../features/auth/authSlice";
 const columns = [
   {
-    title: "SNo",
+    title: "Nº",
     dataIndex: "key",
   },
   {
-    title: "Product Name",
+    title: "Nombre del producto",
     dataIndex: "name",
   },
   {
-    title: "Brand",
+    title: "Marca",
     dataIndex: "brand",
   },
   {
-    title: "Count",
+    title: "Contar",
     dataIndex: "count",
   },
   {
@@ -27,16 +27,16 @@ const columns = [
     dataIndex: "color",
   },
   {
-    title: "Amount",
+    title: "Cantidad",
     dataIndex: "amount",
   },
   {
-    title: "Date",
+    title: "Fecha",
     dataIndex: "date",
   },
 
   {
-    title: "Action",
+    title: "Accion",
     dataIndex: "action",
   },
 ];
@@ -74,7 +74,7 @@ const ViewOrder = () => {
   }
   return (
     <div>
-      <h3 className="mb-4 title">View Order</h3>
+      <h3 className="mb-4 title">Ver pedido</h3>
       <div>
         <Table columns={columns} dataSource={data1} />
       </div>
